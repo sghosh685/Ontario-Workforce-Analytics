@@ -304,6 +304,23 @@ def make_analysis_summary(
             "Transportation, health care, and information/culture/recreation lead the latest year-over-year gains.",
             "Education, public administration, professional services, and accommodation/food services show latest year-over-year softness and should be treated as monitoring areas.",
         ],
+        "version_2_roadmap": [
+            {
+                "title": "Occupation and regional breakdowns",
+                "work": "Add occupation-level and Ontario regional views so the project can move beyond province-wide sector summaries.",
+                "help": "This makes the analysis look more like applied labour market work because it connects sector shifts to where and for whom workforce pressure is happening.",
+            },
+            {
+                "title": "Demand-side signals",
+                "work": "Layer in job vacancies, Job Bank signals, or Ontario labour market context to compare employment outcomes with hiring demand.",
+                "help": "This strengthens the policy story by showing not only who is employed, but where demand may still be rising or unmet.",
+            },
+            {
+                "title": "Decision-support dashboard polish",
+                "work": "Add slicers, annotations, downloadable summary views, and a stronger briefing section for senior leadership use.",
+                "help": "This makes the project feel less like a student chart pack and more like a reporting product that could support real planning conversations.",
+            },
+        ],
     }
 
 
@@ -575,6 +592,54 @@ def dashboard_html(data: dict, summary: dict) -> str:
       overflow-x: auto;
     }
 
+    .roadmap-section {
+      margin-top: 14px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .roadmap-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      min-height: 178px;
+    }
+
+    .roadmap-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .roadmap-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .roadmap-card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .roadmap-card .impact {
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -628,6 +693,7 @@ def dashboard_html(data: dict, summary: dict) -> str:
       .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .insight-strip { grid-template-columns: 1fr; }
       .main-grid { grid-template-columns: 1fr; }
+      .roadmap-grid { grid-template-columns: 1fr; }
       header { grid-template-columns: 1fr; }
       .source-pill { white-space: normal; }
     }
@@ -766,6 +832,18 @@ def dashboard_html(data: dict, summary: dict) -> str:
           </div>
         </section>
       </div>
+    </section>
+
+    <section class="roadmap-section" aria-label="Version 2 roadmap">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Version 2 Roadmap</h2>
+            <p class="panel-note">A visible roadmap helps the project read like an evolving analytics product rather than a one-time portfolio exercise.</p>
+          </div>
+        </div>
+        <div class="roadmap-grid" id="roadmap-grid"></div>
+      </section>
     </section>
 
     <footer>
@@ -989,6 +1067,18 @@ def dashboard_html(data: dict, summary: dict) -> str:
       }).join("");
     }
 
+    function renderRoadmap() {
+      const grid = document.getElementById("roadmap-grid");
+      grid.innerHTML = summary.version_2_roadmap.map((item, index) => `
+        <article class="roadmap-card">
+          <div class="roadmap-kicker">Version 2 priority ${index + 1}</div>
+          <h3>${item.title}</h3>
+          <p>${item.work}</p>
+          <div class="impact"><strong>Why it helps:</strong> ${item.help}</div>
+        </article>
+      `).join("");
+    }
+
     function render() {
       document.getElementById("kpi-employment").textContent = fmtPeopleFromThousands(summary.kpis.employment_thousands);
       document.getElementById("kpi-unemployment").textContent = fmtPct(summary.kpis.unemployment_rate_percent, 1);
@@ -1007,6 +1097,7 @@ def dashboard_html(data: dict, summary: dict) -> str:
       ], value => fmtPct(value, 0));
       renderSector("since");
       renderWatchlist();
+      renderRoadmap();
     }
 
     document.querySelectorAll(".segmented button").forEach(button => {
@@ -1039,6 +1130,7 @@ def write_professional_outputs(
     summary: dict,
     dashboard_data: dict,
 ) -> None:
+    html = dashboard_html(dashboard_data, summary)
     dim_date.to_csv(MODEL_DIR / "dim_date.csv", index=False)
     dim_industry.to_csv(MODEL_DIR / "dim_industry.csv", index=False, float_format="%.1f")
     fact_labour.to_csv(
@@ -1055,9 +1147,10 @@ def write_professional_outputs(
         json.dumps({"summary": summary, "data": dashboard_data}, indent=2),
         encoding="utf-8",
     )
-    (DASHBOARD_DIR / "index.html").write_text(
-        dashboard_html(dashboard_data, summary), encoding="utf-8"
-    )
+    # Keep the root site entrypoint and the dashboard copy in sync so GitHub Pages
+    # and local preview show the same version of the project.
+    (DASHBOARD_DIR / "index.html").write_text(html, encoding="utf-8")
+    (PROJECT_DIR / "index.html").write_text(html, encoding="utf-8")
 
 
 def write_sql_files() -> None:

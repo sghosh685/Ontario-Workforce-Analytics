@@ -124,6 +124,23 @@
       "Care economy and professional services show large gains since 2021, supporting workforce pipeline and training relevance.",
       "Transportation, health care, and information/culture/recreation lead the latest year-over-year gains.",
       "Education, public administration, professional services, and accommodation/food services show latest year-over-year softness and should be treated as monitoring areas."
+    ],
+    "version_2_roadmap": [
+      {
+        "title": "Occupation and regional breakdowns",
+        "work": "Add occupation-level and Ontario regional views so the project can move beyond province-wide sector summaries.",
+        "help": "This makes the analysis look more like applied labour market work because it connects sector shifts to where and for whom workforce pressure is happening."
+      },
+      {
+        "title": "Demand-side signals",
+        "work": "Layer in job vacancies, Job Bank signals, or Ontario labour market context to compare employment outcomes with hiring demand.",
+        "help": "This strengthens the policy story by showing not only who is employed, but where demand may still be rising or unmet."
+      },
+      {
+        "title": "Decision-support dashboard polish",
+        "work": "Add slicers, annotations, downloadable summary views, and a stronger briefing section for senior leadership use.",
+        "help": "This makes the project feel less like a student chart pack and more like a reporting product that could support real planning conversations."
+      }
     ]
   },
   "data": {
