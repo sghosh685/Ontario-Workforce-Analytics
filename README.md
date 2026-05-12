@@ -82,6 +82,7 @@ Documentation:
 - `docs/powerbi_build_guide.md`
 - `docs/executive_deck_storyboard.md`
 - `docs/resume_application_snippets.md`
+- `docs/version_2_roadmap.md`
 
 Validation:
 
@@ -119,6 +120,20 @@ Build one dashboard page with:
 - Industry change since January 2021 bar chart
 - Latest year-over-year industry change bar chart
 - A short text box with 2-3 policy implications
+
+## Version 2 Roadmap
+
+Yes, this project should show what comes next.
+
+Version 2 is useful because it makes the project look like a real analytics product with a roadmap, not a one-time assignment. The strongest next steps are:
+
+- add occupation and regional detail
+- add demand-side signals such as vacancies or Job Bank context
+- add more executive-style reporting polish
+
+Detailed plan:
+
+- [Version 2 roadmap](</Users/saikatghosh/Documents/New project/Ontario-Workforce-Analytics-Dashboard/docs/version_2_roadmap.md>)
 
 ## Notes
 
