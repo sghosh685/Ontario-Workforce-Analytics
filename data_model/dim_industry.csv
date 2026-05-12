@@ -1,0 +1,20 @@
+industry_key,industry,industry_display,is_rollup,sector_type,policy_theme,latest_employment_rank,change_since_2021_thousands,latest_yoy_change_thousands,portfolio_focus_flag
+1,Accommodation and food services [72],Accommodation and food services,False,Services-producing,Consumer services,13,114.9,-12.0,True
+2,"Agriculture [111-112, 1100, 1151-1152]",Agriculture,False,Goods-producing,Primary industries,18,2.9,1.5,False
+3,"Business, building and other support services [55-56]","Business, building and other support services",False,Services-producing,Business services,16,29.8,16.4,False
+4,Construction [23],Construction,False,Goods-producing,Infrastructure,10,25.8,-7.3,False
+5,Educational services [61],Educational services,False,Services-producing,Public service workforce,9,48.2,-32.9,True
+6,"Finance, insurance, real estate, rental and leasing [52-53]","Finance, insurance, real estate, rental and leasing",False,Services-producing,Business services,8,97.3,5.5,True
+7,"Forestry, fishing, mining, quarrying, oil and gas [21, 113-114, 1153, 2100]","Forestry, fishing, mining, quarrying, oil and gas",False,Goods-producing,Primary industries,19,14.5,3.4,False
+8,Health care and social assistance [62],Health care and social assistance,False,Services-producing,Care economy,5,176.0,39.7,True
+9,"Information, culture and recreation [51, 71]","Information, culture and recreation",False,Services-producing,Creative and digital economy,14,107.7,23.7,True
+10,Manufacturing [31-33],Manufacturing,False,Goods-producing,Industrial base,7,7.4,-8.5,False
+11,Other services (except public administration) [81],Other services (except public administration),False,Services-producing,Consumer services,15,46.1,10.1,False
+12,"Professional, scientific and technical services [54]","Professional, scientific and technical services",False,Services-producing,Knowledge economy,6,161.5,-12.5,True
+13,Public administration [91],Public administration,False,Services-producing,Public service workforce,11,76.5,-12.9,True
+14,Transportation and warehousing [48-49],Transportation and warehousing,False,Services-producing,Supply chain,12,97.5,40.6,True
+15,Utilities [22],Utilities,False,Goods-producing,Infrastructure,17,19.4,0.2,False
+16,"Wholesale and retail trade [41, 44-45]",Wholesale and retail trade,False,Services-producing,Consumer and distribution,4,109.9,-0.3,True
+17,Goods-producing sector,Goods-producing sector,True,Rollup,Aggregate,3,,,False
+18,Services-producing sector,Services-producing sector,True,Rollup,Aggregate,2,,,False
+19,"Total employed, all industries","Total employed, all industries",True,Rollup,Aggregate,1,,,False

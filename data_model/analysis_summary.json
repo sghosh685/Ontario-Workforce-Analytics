@@ -1,0 +1,127 @@
+{
+  "title": "Ontario Workforce Snapshot, 2021-2026",
+  "latest_month": "2026-04",
+  "date_range": "2021-01 to 2026-04",
+  "headline": "Ontario employment is above its 2021 level, but the latest year-over-year picture shows mixed pressure across sectors.",
+  "kpis": {
+    "employment_thousands": 8247.9,
+    "labour_force_thousands": 8920.8,
+    "unemployment_rate_percent": 7.5,
+    "participation_rate_percent": 64.8,
+    "employment_yoy_change_thousands": 54.3,
+    "employment_yoy_change_percent": 0.7
+  },
+  "top_long_term_growth": [
+    {
+      "industry_display": "Health care and social assistance",
+      "change_thousands": 176.0,
+      "change_percent": 20.1
+    },
+    {
+      "industry_display": "Professional, scientific and technical services",
+      "change_thousands": 161.5,
+      "change_percent": 21.8
+    },
+    {
+      "industry_display": "Accommodation and food services",
+      "change_thousands": 114.9,
+      "change_percent": 36.9
+    },
+    {
+      "industry_display": "Wholesale and retail trade",
+      "change_thousands": 109.9,
+      "change_percent": 10.8
+    },
+    {
+      "industry_display": "Information, culture and recreation",
+      "change_thousands": 107.7,
+      "change_percent": 42.1
+    }
+  ],
+  "weakest_long_term_growth": [
+    {
+      "industry_display": "Agriculture",
+      "change_thousands": 2.9,
+      "change_percent": 4.4
+    },
+    {
+      "industry_display": "Manufacturing",
+      "change_thousands": 7.4,
+      "change_percent": 0.9
+    },
+    {
+      "industry_display": "Forestry, fishing, mining, quarrying, oil and gas",
+      "change_thousands": 14.5,
+      "change_percent": 43.0
+    },
+    {
+      "industry_display": "Utilities",
+      "change_thousands": 19.4,
+      "change_percent": 39.4
+    },
+    {
+      "industry_display": "Construction",
+      "change_thousands": 25.8,
+      "change_percent": 4.8
+    }
+  ],
+  "top_latest_yoy_growth": [
+    {
+      "industry_display": "Transportation and warehousing",
+      "yoy_change_thousands": 40.6,
+      "yoy_change_percent": 10.1
+    },
+    {
+      "industry_display": "Health care and social assistance",
+      "yoy_change_thousands": 39.7,
+      "yoy_change_percent": 3.9
+    },
+    {
+      "industry_display": "Information, culture and recreation",
+      "yoy_change_thousands": 23.7,
+      "yoy_change_percent": 7.0
+    },
+    {
+      "industry_display": "Business, building and other support services",
+      "yoy_change_thousands": 16.4,
+      "yoy_change_percent": 5.9
+    },
+    {
+      "industry_display": "Other services (except public administration)",
+      "yoy_change_thousands": 10.1,
+      "yoy_change_percent": 3.5
+    }
+  ],
+  "weakest_latest_yoy_growth": [
+    {
+      "industry_display": "Educational services",
+      "yoy_change_thousands": -32.9,
+      "yoy_change_percent": -5.4
+    },
+    {
+      "industry_display": "Public administration",
+      "yoy_change_thousands": -12.9,
+      "yoy_change_percent": -2.7
+    },
+    {
+      "industry_display": "Professional, scientific and technical services",
+      "yoy_change_thousands": -12.5,
+      "yoy_change_percent": -1.4
+    },
+    {
+      "industry_display": "Accommodation and food services",
+      "yoy_change_thousands": -12.0,
+      "yoy_change_percent": -2.7
+    },
+    {
+      "industry_display": "Manufacturing",
+      "yoy_change_thousands": -8.5,
+      "yoy_change_percent": -1.0
+    }
+  ],
+  "policy_implications": [
+    "Care economy and professional services show large gains since 2021, supporting workforce pipeline and training relevance.",
+    "Transportation, health care, and information/culture/recreation lead the latest year-over-year gains.",
+    "Education, public administration, professional services, and accommodation/food services show latest year-over-year softness and should be treated as monitoring areas."
+  ]
+}

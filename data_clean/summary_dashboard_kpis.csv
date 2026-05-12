@@ -1,0 +1,7 @@
+metric,value,unit,latest_month,comparison_month,note
+Latest Ontario employment,8247.9,persons_thousands,2026-04,,"Multiply by 1,000 for persons."
+Latest unemployment rate,7.5,percent,2026-04,,Seasonally adjusted.
+Latest labour force,8920.8,persons_thousands,2026-04,,"Multiply by 1,000 for persons."
+Latest participation rate,64.8,percent,2026-04,,Seasonally adjusted.
+Employment year-over-year change,54.3,persons_thousands,2026-04,2025-04,Latest month minus same month one year earlier.
+Employment year-over-year change rate,0.7,percent,2026-04,2025-04,Same-month year-over-year percent change.
