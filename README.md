@@ -83,6 +83,7 @@ Documentation:
 - `docs/executive_deck_storyboard.md`
 - `docs/resume_application_snippets.md`
 - `docs/version_2_roadmap.md`
+- `docs/cortex_engine_blueprint.md`
 
 Validation:
 
@@ -123,17 +124,16 @@ Build one dashboard page with:
 
 ## Version 2 Roadmap
 
-Yes, this project should show what comes next.
+Next steps:
 
-Version 2 is useful because it makes the project look like a real analytics product with a roadmap, not a one-time assignment. The strongest next steps are:
-
-- add occupation and regional detail
-- add demand-side signals such as vacancies or Job Bank context
-- add more executive-style reporting polish
+- Add occupation and regional detail
+- Add demand-side signals such as vacancies or Job Bank context
+- Build a reusable StatCan ingestion engine for additional data products
 
 Detailed plan:
 
-- [Version 2 roadmap](</Users/saikatghosh/Documents/New project/Ontario-Workforce-Analytics-Dashboard/docs/version_2_roadmap.md>)
+- [Version 2 roadmap](docs/version_2_roadmap.md)
+- [Cortex Engine blueprint](docs/cortex_engine_blueprint.md)
 
 ## Notes
 

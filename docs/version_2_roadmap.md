@@ -1,34 +1,86 @@
 # Roadmap: Ontario Workforce Analytics 2.0
 
-This document outlines the strategic evolution of the Ontario Workforce Analytics Dashboard from a static data snapshot into a dynamic, production-grade decision support tool.
+This document outlines the next phases for the Ontario Workforce Analytics project.
 
-## Phase 1: Dynamic Data Ingestion (The "Workable" Feature)
-**Objective:** Enable the dashboard to process any compatible StatCan dataset without requiring a code update.
+> Build a reusable StatCan ingestion and profiling engine that can turn selected, compatible public data tables into documented dashboard-ready analytics products.
 
-*   **Feature: Drag-and-Drop Parser**
-    *   Integrate `PapaParse.js` to handle client-side CSV parsing.
-    *   Implement a "Schema Mapper" that detects StatCan column headers (Ref_Date, Value, Vector, etc.).
-    *   Allow users to drop a raw CSV file from Table 14-10-0287-01 to instantly update the visuals.
-*   **Feature: Data Export**
-    *   Allow users to download the filtered "Watchlist" or "Sector Movement" data as a clean Excel/CSV file for briefing notes.
+For the deeper system design, see:
 
-## Phase 2: Live API Integration & Demand Signals
-**Objective:** Automate data updates and integrate demand-side intelligence.
+- `docs/cortex_engine_blueprint.md`
 
-*   **Feature: StatCan Web Service (WDS)**
-    *   Replace embedded JSON with a fetch call to the Statistics Canada Web Data Service.
-    *   Implement a "Refresh" button that triggers a live pull of the most recent monthly release.
-*   **Feature: Demand-Side Indicators**
-    *   Integrate **Job Vacancy and Wage Survey (JVWS)** data to show labor shortages alongside employment levels.
-    *   Add Job Bank trend context to highlight high-demand occupations.
+## Phase 1: Dataset Profiling
 
-## Phase 3: Advanced Analytics & UX
-**Objective:** Increase the depth of insight and improve the analytical user experience.
+**Objective:** Inspect any candidate StatCan table and report whether it is dashboard-ready.
 
-*   **Feature: Regional & Occupation Slicing**
-    *   Include data for Ontario Economic Regions and specific 2-digit NOC (Occupation) codes.
-    *   Add an interactive SVG map for geographic workforce distribution.
-*   **Feature: Demographic Deep-Dives**
-    *   Add toggles for Gender, Age Group (15-24, 25-54, 55+), and Education level.
-*   **Feature: Executive Polish**
-    *   Implement a "Briefing Mode" that generates a one-page executive summary PDF based on the current view.
+Features:
+
+- Accept a StatCan table ID or product ID
+- Download or read the full-table CSV
+- Detect date, value, geography, unit, scalar, and topic dimensions
+- Report date range, frequency, table shape, missing values, and candidate dashboard type
+- Generate a profile JSON and a human-readable summary
+
+## Phase 2: Config-Driven Builds
+
+**Objective:** Generate clean model tables and summaries from a small config file.
+
+Features:
+
+- Create a draft config from the profile
+- Let the analyst define the main geography, category dimension, filters, and metrics
+- Generate fact and dimension tables
+- Produce validation reports
+- Produce summary JSON for the website
+
+## Phase 3: Demand and Regional Labour Market Layer
+
+**Objective:** Strengthen the existing Ontario workforce dashboard with deeper labour market context.
+
+Features:
+
+- Add occupation-level indicators
+- Add Ontario regional or census metropolitan area views
+- Add job vacancy or wage signals where available
+- Compare employment change with demand-side indicators
+
+## Phase 4: Public-Data Monitor Hub
+
+**Objective:** Use the same engine to produce additional monitors.
+
+Candidate projects:
+
+- Ontario Workforce Snapshot
+- Ontario Inflation Monitor
+- Ontario Housing Affordability Snapshot
+- Ontario Workforce Demand Layer
+
+Features:
+
+- One landing page
+- Project cards
+- Source table metadata
+- Dashboard links
+- Methodology notes
+- Validation reports
+
+## What Not To Build Yet
+
+Avoid these until the core engine works:
+
+- full SaaS authentication
+- database deployment
+- massive daily delta ingestion
+- automatic dashboards for every StatCan table
+- AI-written policy claims
+- complex SDMX transformations
+
+## Next Sprint
+
+Build the smallest useful engine:
+
+1. `main.py profile <table_id>`
+2. CSV ZIP download or local CSV input
+3. schema profile JSON
+4. readable terminal summary
+5. test on the two current labour market tables
+6. test on one inflation table
